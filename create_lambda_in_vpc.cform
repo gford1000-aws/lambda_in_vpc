@@ -15,8 +15,8 @@
             "Default" : "3",
             "Description" : "Number of private subnets to create in the VPC",
             "Type" : "Number",
-            "AllowedValues" : ["0","1","2","3","4","5","6"],
-            "ConstraintDescription" : "Must be between 0 and 6"
+            "AllowedValues" : ["2","3","4","5","6"],
+            "ConstraintDescription" : "Must be between 2 and 6"
         },
         "VPCTemplateURL" : {
             "Description" : "The URL to the template to create the VPC (see https://github.com/gford1000-aws/vpc/blob/master/create_vpc.cform)",
