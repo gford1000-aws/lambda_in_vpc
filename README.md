@@ -10,7 +10,14 @@ creating a public subnet and 3 private subnets (to which the Lambda is associate
 
 The script creates a nested stack, constructing the VPC separately from the Lambda and S3 bucket, for clarity.  
 
-Note that the VPC *must* have ```EnableDnsSupport = true``` so that DNS resolution of URLs can be performed.
+Notes:
+
+1. the VPC *must* have ```EnableDnsSupport = true``` so that DNS resolution of URLs can be performed.
+
+2. the Lambda IAM Role includes ```ec2:CreateNetworkInterface```, ```ec2:DescribeNetworkInterfaces```, ```ec2:DeleteNetworkInterface``` to allow the ENI to be created within the VPC
+
+3. the Lambda Security Group only allows egress via the VPC, and no ingress.
+
 
 ## Arguments
 
